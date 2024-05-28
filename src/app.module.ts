@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AdminModule } from './admin/admin.module';
-import { UserModule } from './user/user.module';
-import { EmployeeModule } from './employee/employee.module';
+import { AdminModule } from './modules/admin/admin.module';
+import { UserModule } from './modules/user/user.module';
+import { EmployeeModule } from './modules/employee/employee.module';
+import { AuthModule } from './v1/modules/auth/auth.module';
 
 @Module({
-  imports: [AdminModule, UserModule, EmployeeModule],
+  imports: [AdminModule, UserModule, EmployeeModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
